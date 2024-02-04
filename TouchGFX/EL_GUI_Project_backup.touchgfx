@@ -861,7 +861,6 @@
     "SelectedColorDepth": 16,
     "StartupScreenName": "Dice",
     "SelectedStartupLanguage": "GB",
-    "Skin": "Blue",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
     "AvailableColorDepths": [
@@ -930,10 +929,11 @@
     "PortraitSkinY": 0,
     "DisplayOrientation": "Landscape",
     "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
     "Platform": "m4",
     "ProjectFile": "../EL_GUI_Project.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": []
   },
-  "Version": "4.20.0"
+  "Version": "4.21.4"
 }

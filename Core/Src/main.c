@@ -181,6 +181,7 @@ int main(void)
 
   /* Start scheduler */
   osKernelStart();
+
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -603,10 +604,17 @@ static void MX_FMC_Init(void)
   SdramTiming.LoadToActiveDelay = 2;
   SdramTiming.ExitSelfRefreshDelay = 7;
   SdramTiming.SelfRefreshTime = 4;
-  SdramTiming.RowCycleDelay = 7;
+  SdramTiming.RowCycleDelay = 12;
   SdramTiming.WriteRecoveryTime = 3;
   SdramTiming.RPDelay = 2;
   SdramTiming.RCDDelay = 2;
+//  SdramTiming.LoadToActiveDelay = 2;
+//  SdramTiming.ExitSelfRefreshDelay = 7;
+//  SdramTiming.SelfRefreshTime = 4;
+//  SdramTiming.RowCycleDelay = 14;
+//  SdramTiming.WriteRecoveryTime = 4;
+//  SdramTiming.RPDelay = 3;
+//  SdramTiming.RCDDelay = 3;
 
   if (HAL_SDRAM_Init(&hsdram1, &SdramTiming) != HAL_OK)
   {

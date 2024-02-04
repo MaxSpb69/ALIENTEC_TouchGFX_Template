@@ -1,8 +1,8 @@
 /******************************************************************************
-* Copyright (c) 2018(-2023) STMicroelectronics.
+* Copyright (c) 2018(-2024) STMicroelectronics.
 * All rights reserved.
 *
-* This file is part of the TouchGFX 4.21.4 distribution.
+* This file is part of the TouchGFX 4.23.1 distribution.
 *
 * This software is licensed under terms that can be found in the LICENSE file in
 * the root directory of this software component.
@@ -30,7 +30,7 @@ void Image::draw(const Rect& invalidatedArea) const
     translateRectToAbsolute(meAbs); // To find our x and y coords in absolute.
 
     // Calculate intersection between bitmap rect and invalidated area.
-    Rect dirtyBitmapArea = bitmap.getRect() & invalidatedArea;
+    const Rect dirtyBitmapArea = bitmap.getRect() & invalidatedArea;
 
     if (!dirtyBitmapArea.isEmpty())
     {

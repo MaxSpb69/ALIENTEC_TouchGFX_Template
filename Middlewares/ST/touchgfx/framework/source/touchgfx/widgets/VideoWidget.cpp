@@ -1,8 +1,8 @@
 /******************************************************************************
-* Copyright (c) 2018(-2023) STMicroelectronics.
+* Copyright (c) 2018(-2024) STMicroelectronics.
 * All rights reserved.
 *
-* This file is part of the TouchGFX 4.21.4 distribution.
+* This file is part of the TouchGFX 4.23.1 distribution.
 *
 * This software is licensed under terms that can be found in the LICENSE file in
 * the root directory of this software component.
@@ -164,7 +164,7 @@ void VideoWidget::readVideoInformation()
     VideoController::getInstance().getVideoInformation(handle, &videoInformation);
     videoWidth = (int16_t)videoInformation.frame_width;
     videoHeight = (int16_t)videoInformation.frame_height;
-    uint32_t videoFramesIn1000ms = 1000 / videoInformation.ms_between_frames;
+    const uint32_t videoFramesIn1000ms = 1000 / videoInformation.ms_between_frames;
     setFrameRate(60, videoFramesIn1000ms);
 }
 

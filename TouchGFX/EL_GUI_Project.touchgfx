@@ -887,33 +887,38 @@
         "Id": "LCD16bpp",
         "Features": [
           {
-            "Id": "RGB565",
-            "IsEnabled": true
-          },
-          {
-            "Id": "ARGB8888",
-            "IsEnabled": true
-          },
-          {
-            "Id": "L8_RGB565",
+            "Id": "TextureMapperImageFormats",
             "Features": [
               {
-                "Id": "BilinearInterpolation",
+                "Id": "RGB565",
+                "IsEnabled": true
+              },
+              {
+                "Id": "ARGB8888",
+                "IsEnabled": true
+              },
+              {
+                "Id": "L8_RGB565",
+                "Features": [
+                  {
+                    "Id": "BilinearInterpolation",
+                    "IsEnabled": true
+                  }
+                ]
+              },
+              {
+                "Id": "L8_RGB888",
+                "IsEnabled": true
+              },
+              {
+                "Id": "L8_ARGB888",
+                "IsEnabled": true
+              },
+              {
+                "Id": "A4",
                 "IsEnabled": true
               }
             ]
-          },
-          {
-            "Id": "L8_RGB888",
-            "IsEnabled": true
-          },
-          {
-            "Id": "L8_ARGB888",
-            "IsEnabled": true
-          },
-          {
-            "Id": "A4",
-            "IsEnabled": true
           }
         ]
       }
@@ -930,10 +935,12 @@
     "DisplayOrientation": "Landscape",
     "Family": "STM32F4",
     "SubFamily": "STM32F429/439",
+    "Toolchain": "STM32CubeIDE",
     "Platform": "m4",
     "ProjectFile": "../EL_GUI_Project.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
-    "OptionalComponents": []
+    "OptionalComponents": [],
+    "AdditionalFeatures": []
   },
-  "Version": "4.21.4"
+  "Version": "4.23.1"
 }

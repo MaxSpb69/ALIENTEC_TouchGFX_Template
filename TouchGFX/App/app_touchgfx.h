@@ -2,13 +2,13 @@
   ******************************************************************************
   * File Name          : app_touchgfx.h
   ******************************************************************************
-  * This file was created by TouchGFX Generator 4.21.4. This file is only
+  * This file was created by TouchGFX Generator 4.23.1. This file is only
   * generated once! Delete this file from your project and re-generate code
   * using STM32CubeMX or change this file manually to update it.
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -22,7 +22,7 @@
 #ifndef APP_TOUCHGFX_H
 #define APP_TOUCHGFX_H
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -46,7 +46,7 @@
 void MX_TouchGFX_PreOSInit(void);
 void MX_TouchGFX_Init(void);
 void MX_TouchGFX_Process(void);
-void TouchGFX_Task(void *argument);
+void TouchGFX_Task(void* argument);
 
 /* USER CODE BEGIN EFP */
 
