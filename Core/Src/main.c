@@ -74,6 +74,8 @@ uint8_t ucHeap[ configTOTAL_HEAP_SIZE ] __attribute__((section(".ccmram")));
 // configAPPLICATION_ALLOCATED_HEAP=1
 
 
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -128,14 +130,14 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_LTDC_Init();
+//  MX_LTDC_Init();
   MX_RTC_Init();
   MX_CRC_Init();
   MX_I2C1_Init();
   MX_SDIO_SD_Init();
   MX_FMC_Init();
   MX_SPI1_Init();
-  MX_DMA2D_Init();
+// MX_DMA2D_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
@@ -604,17 +606,12 @@ static void MX_FMC_Init(void)
   SdramTiming.LoadToActiveDelay = 2;
   SdramTiming.ExitSelfRefreshDelay = 7;
   SdramTiming.SelfRefreshTime = 4;
-  SdramTiming.RowCycleDelay = 12;
+  SdramTiming.RowCycleDelay = 7;
   SdramTiming.WriteRecoveryTime = 3;
   SdramTiming.RPDelay = 2;
   SdramTiming.RCDDelay = 2;
-//  SdramTiming.LoadToActiveDelay = 2;
-//  SdramTiming.ExitSelfRefreshDelay = 7;
-//  SdramTiming.SelfRefreshTime = 4;
-//  SdramTiming.RowCycleDelay = 14;
-//  SdramTiming.WriteRecoveryTime = 4;
-//  SdramTiming.RPDelay = 3;
-//  SdramTiming.RCDDelay = 3;
+
+
 
   if (HAL_SDRAM_Init(&hsdram1, &SdramTiming) != HAL_OK)
   {
@@ -732,6 +729,8 @@ void TouchGFX_Task_start(void *argument)
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
   CopyFlashToSdram(0xD00000);
+  MX_LTDC_Init();
+  MX_DMA2D_Init();
   LCD_BL_Ctrl(1);
   //GT9147_Init();
   TouchGFX_Task(argument);

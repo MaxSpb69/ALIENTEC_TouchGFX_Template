@@ -9,6 +9,7 @@
 #include "main.h"
 
 #define FLASH_SPI	hspi1
+#define SDRAM_EXT_ADDR 0xC0300000
 
 extern SPI_HandleTypeDef FLASH_SPI;
 
@@ -108,7 +109,7 @@ void CopyFlashToSdram(uint32_t len)
 		for (i = 0; i < num_full_blocks; i++)
 		{
 			while(isReceivingData);
-			DataReader_StartDMAReadData(i * 65535 , (uint8_t*)(0xc0300000 + (i * 65535)), 65535);
+			DataReader_StartDMAReadData(i * 65535 , (uint8_t*)(SDRAM_EXT_ADDR + (i * 65535)), 65535);
 		}
 	}
 
@@ -116,7 +117,7 @@ void CopyFlashToSdram(uint32_t len)
 
 	if(last_block_len > 0)
 	{
-		DataReader_StartDMAReadData(i * 65535 , (uint8_t*)(0xc0300000 + (i * 65535)), last_block_len);
+		DataReader_StartDMAReadData(i * 65535 , (uint8_t*)(SDRAM_EXT_ADDR + (i * 65535)), last_block_len);
 		while(isReceivingData);
 	}
 
